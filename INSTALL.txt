@@ -1,0 +1,13 @@
+Hypothesis Seer（Alpha 靈感占卜家）— 獨立可用，不需要審判官或羅盤
+
+1. 把 agents/ 整個資料夾放到你的 open machine 根目錄（和 src/、DB/ 同一層）。
+2. 在根目錄執行：  bash agents/install.sh --only seer
+   （它會列出要新增的檔案再問你一次；只新增 .claude/skills、CLAUDE.md 一行、AGENTS.md 一段、src/idea.py、DB/ResearchDB/{hypothesis,idea}/）
+3. 自我檢查：      bash agents/selftest.sh
+4. 重開 Claude Code，試：  /hypothesis <一句直覺、一篇文章連結、或一個 dataset id>
+   第一站它會整理成最多 3 個命題讓你選，選了才找文獻、寫四關、建卡（沒裝審判官時附四關自檢分數）。
+   alpha：/express <card> 寫式子 → python -m src.idea --idea <card> 送模擬 → python agents/hypothesis_seer/cli/self_check.py <card> → /templatize <card>
+   SPC：  /spc universe 建主清單 → /spc <card> 寫 prompt → 你實測 3 次 → 定稿 → 你提交 → /spc submitted（沒裝審判官時主清單與實測不檢查）
+   不是用 Claude Code：工具讀根目錄的 AGENTS.md，打 /hypothesis 等指令時它會去讀對應的 SKILL.md。
+   （可選）想要第二意見：另外下載審判官的包，放進 agents/ 後執行 bash agents/install.sh --only inquisitor
+說明與限制見 agents/README.md。回報問題時請附 selftest.sh 的輸出，不要附 .env、session.pkl、login_time.pkl。
