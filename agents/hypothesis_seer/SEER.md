@@ -76,7 +76,7 @@ python agents/common/syntax_check.py -e "..." -s <card> | -i <card> | -t <templa
 python agents/common/templatize.py --from-idea <card> -o <card>_<slug>
 python agents/common/brain_meta.py operators | datasets | session-status
 python agents/research_compass/cli/dedup.py --text "..." [--dataset ..] [--tag ..]     # 有裝羅盤才有
-python agents/hypothesis_seer/cli/spc_prompt.py universe|render|show|finalize <card>
+python agents/hypothesis_seer/cli/spc_prompt.py universe|render|show|finalize <card> | masters | master <清單> --source ..   # master：沒裝審判官時不檢查直接存
 python agents/hypothesis_seer/cli/spc_registry.py submitted|weight|checked|list|coverage
 python agents/expression_inquisitor/cli/spc_universe.py check|reverse-prompt|reverse-check|masters   # 有裝審判官才有
 ```
